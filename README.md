@@ -301,3 +301,15 @@ https://github.com/nodeonly/mongoose-test
 
 - git.oschina
 - 灵雀云 Alauda or heroku or ngork 
+
+
+## FAQ
+
+### nvm 和 npm 的关系是什么？  类似于Ruby中的 rvm 和 bundler 吗？
+
+对的，非常准确
+
+Rails 3 中引入Bundle来管理项目中所有gem依赖，该命令只能在一个含有Gemfile的目录下执行，如rails 3项目的根目录
+
+npm实际是对package.json管理node module的。
+
