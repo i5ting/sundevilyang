@@ -273,11 +273,42 @@ Visit Robomongo website: www.robomongo.org
 
 ### 学习mongoose用法crud
 
-mongoosejs.com/docs/
+创建表结构
 
-or
+- 用户
+  - 用户名
+  - 密码
 
-mongoosedao
+完成用户表的crud
+
+
+创建Post表
+
+- Post
+  - title
+  - body
+  - user_id
+
+完成Post的crud，注意此时使用的callback完成的。
+
+学习populate用法
+
+    Post.find({"_id" : mongoose.Types.ObjectId("55c2ca1979624c1a98ce9d04")}).populate('create_by').exec(function(err,data){
+      ...
+    });
+
+改造callback为promise方式
+
+    User.createAsync({name:'kezhi',password:'333',age:20}).then(function(u){  
+      return Post.createAsync({title:'夏天到了',content:'树叶绿了',create_by: u._id})
+    }).then(function(){
+      ...
+    }).catch(function(err){
+      console.log(err);
+    });
+
+
+文档见mongoosejs.com/docs/ or mongoosedao
 
 - crud
 - statics和methods
