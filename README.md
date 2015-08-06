@@ -307,6 +307,25 @@ Visit Robomongo website: www.robomongo.org
       console.log(err);
     });
 
+比较
+
+    User.create({},function(err,doc){});
+
+和
+
+    User.createAsync().then(function(doc){
+      
+    }).catch(function(err){
+      
+    });
+
+用法上的差异
+
+学习promise/A+规范
+
+- then
+- resolve
+- reject
 
 文档见mongoosejs.com/docs/ or mongoosedao
 
